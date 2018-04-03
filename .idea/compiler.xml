@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="NPEDectetor" />
+        <module name="NPEDetector" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="NPEDectetor" target="1.5" />
+      <module name="NPEDetector" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

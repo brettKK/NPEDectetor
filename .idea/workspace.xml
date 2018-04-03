@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d294cba9-a29f-4ed8-86aa-35356d522431" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ibm_wala_com_ibm_wala_core_1_4_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ibm_wala_com_ibm_wala_shrike_1_4_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ibm_wala_com_ibm_wala_util_1_4_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/NPEDectetor.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lujie/NPEDectetor.java" afterPath="$PROJECT_DIR$/src/main/java/com/lujie/NPEDectetor.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lujie/ScoreNode.java" afterPath="$PROJECT_DIR$/src/main/java/com/lujie/ScoreNode.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/NPEDectetor.iml" afterPath="$PROJECT_DIR$/NPEDetector.iml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,13 +20,12 @@
       <file leaf-file-name="NPEDectetor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/NPEDectetor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="91" column="24" lean-forward="true" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+            <state relative-caret-position="750">
+              <caret line="91" column="24" lean-forward="false" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#dumpResult#0;class#NPEDectetor#0" expanded="false" />
                 <element signature="method#buildScoreSet#0;class#NPEDectetor#0" expanded="false" />
-                <element signature="e#4811#4822#0" expanded="true" />
                 <element signature="method#checkParameter#0;class#NPEDectetor#0" expanded="false" />
                 <element signature="method#findJarFiles#0;class#NPEDectetor#0" expanded="false" />
                 <element signature="method#findAllReturnNullNode#0;class#NPEDectetor#0" expanded="false" />
@@ -49,7 +37,6 @@
                 <element signature="method#getFinalRefernces#0;class#NPEDectetor#0" expanded="false" />
                 <element signature="method#filterByIfNENull#0;class#NPEDectetor#0" expanded="false" />
                 <element signature="method#controlByNENull#0;class#NPEDectetor#0" expanded="false" />
-                <element signature="e#18094#18110#0" expanded="true" />
                 <element signature="method#findPreBB#0;class#NPEDectetor#0" expanded="false" />
               </folding>
             </state>
@@ -69,8 +56,8 @@
       <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+            <state relative-caret-position="152">
+              <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -79,7 +66,7 @@
       <file leaf-file-name="DailyRollingFileAppender.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/org/apache/log4j/DailyRollingFileAppender.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
+            <state relative-caret-position="90">
               <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
                 <marker date="1512287851000" expanded="false" signature="0:104" ph="/.../" />
@@ -103,7 +90,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
+            <state relative-caret-position="600">
               <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
               <folding />
             </state>
@@ -113,7 +100,7 @@
       <file leaf-file-name="WalaProperties.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/properties/WalaProperties.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
+            <state relative-caret-position="1125">
               <caret line="89" column="63" lean-forward="false" selection-start-line="89" selection-start-column="63" selection-end-line="89" selection-end-column="63" />
               <folding>
                 <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
@@ -152,7 +139,7 @@
       <file leaf-file-name="PropagationCallGraphBuilder.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/callgraph/propagation/PropagationCallGraphBuilder.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
+            <state relative-caret-position="1155">
               <caret line="122" column="21" lean-forward="false" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
               <folding>
                 <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
@@ -245,8 +232,8 @@
                 <marker date="1522677342372" expanded="false" signature="19225:19240" ph=" { " />
                 <marker date="1522677342372" expanded="false" signature="19265:19275" ph=" }" />
                 <marker date="1522677342372" expanded="true" signature="19361:21855" ph="{...}" />
-                <marker date="1522677342372" expanded="false" signature="19658:19723" ph="act(i) → {" />
-                <marker date="1522677342372" expanded="false" signature="21430:21453" ph="}" />
+                <marker date="1522677342372" expanded="true" signature="19677:21453" ph="{...}" />
+                <marker date="1522677342372" expanded="true" signature="19722:21435" ph="{...}" />
                 <marker date="1522677342372" expanded="false" signature="21886:21901" ph=" { " />
                 <marker date="1522677342372" expanded="false" signature="21940:21950" ph=" }" />
                 <marker date="1522677342372" expanded="true" signature="21992:22354" ph="{...}" />
@@ -257,8 +244,8 @@
                 <marker date="1522677342372" expanded="false" signature="22797:22807" ph=" }" />
                 <marker date="1522677342372" expanded="true" signature="22885:22966" ph="{...}" />
                 <marker date="1522677342372" expanded="true" signature="23052:24432" ph="{...}" />
-                <marker date="1522677342372" expanded="false" signature="23349:23414" ph="act(i) → {" />
-                <marker date="1522677342372" expanded="false" signature="24007:24030" ph="}" />
+                <marker date="1522677342372" expanded="true" signature="23368:24030" ph="{...}" />
+                <marker date="1522677342372" expanded="true" signature="23413:24012" ph="{...}" />
                 <marker date="1522677342372" expanded="false" signature="24463:24478" ph=" { " />
                 <marker date="1522677342372" expanded="false" signature="24541:24551" ph=" }" />
                 <marker date="1522677342372" expanded="true" signature="24593:24986" ph="{...}" />
@@ -271,8 +258,8 @@
                 <marker date="1522677342372" expanded="false" signature="25616:25631" ph=" { " />
                 <marker date="1522677342372" expanded="false" signature="25643:25653" ph=" }" />
                 <marker date="1522677342372" expanded="true" signature="25709:27447" ph="{...}" />
-                <marker date="1522677342372" expanded="false" signature="26393:26458" ph="act(i) → {" />
-                <marker date="1522677342372" expanded="false" signature="27022:27045" ph="}" />
+                <marker date="1522677342372" expanded="true" signature="26412:27045" ph="{...}" />
+                <marker date="1522677342372" expanded="true" signature="26457:27027" ph="{...}" />
                 <marker date="1522677342372" expanded="false" signature="27503:27518" ph=" { " />
                 <marker date="1522677342372" expanded="false" signature="27531:27541" ph=" }" />
                 <marker date="1522677342372" expanded="false" signature="27572:27587" ph=" { " />
@@ -288,8 +275,8 @@
                 <marker date="1522677342372" expanded="false" signature="28865:28880" ph=" { " />
                 <marker date="1522677342372" expanded="false" signature="28960:28970" ph=" }" />
                 <marker date="1522677342372" expanded="true" signature="29026:30557" ph="{...}" />
-                <marker date="1522677342372" expanded="false" signature="29468:29533" ph="act(i) → {" />
-                <marker date="1522677342372" expanded="false" signature="30132:30155" ph="}" />
+                <marker date="1522677342372" expanded="true" signature="29487:30155" ph="{...}" />
+                <marker date="1522677342372" expanded="true" signature="29532:30137" ph="{...}" />
                 <marker date="1522677342372" expanded="false" signature="30613:30628" ph=" { " />
                 <marker date="1522677342372" expanded="false" signature="30641:30651" ph=" }" />
                 <marker date="1522677342372" expanded="false" signature="30682:30697" ph=" { " />
@@ -319,8 +306,8 @@
                 <marker date="1522677342372" expanded="false" signature="34206:34216" ph=" }" />
                 <marker date="1522677342372" expanded="true" signature="34276:34392" ph="{...}" />
                 <marker date="1522677342372" expanded="true" signature="34448:36092" ph="{...}" />
-                <marker date="1522677342372" expanded="false" signature="34821:34886" ph="act(i) → {" />
-                <marker date="1522677342372" expanded="false" signature="35640:35663" ph="}" />
+                <marker date="1522677342372" expanded="true" signature="34840:35663" ph="{...}" />
+                <marker date="1522677342372" expanded="true" signature="34885:35645" ph="{...}" />
                 <marker date="1522677342372" expanded="false" signature="36123:36138" ph=" { " />
                 <marker date="1522677342372" expanded="false" signature="36169:36179" ph=" }" />
                 <marker date="1522677342372" expanded="false" signature="36220:36235" ph=" { " />
@@ -367,52 +354,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Entrypoint.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/callgraph/Entrypoint.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-              <folding>
-                <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1522677342372" expanded="false" signature="150:904" ph="..." />
-                <marker date="1522677342372" expanded="true" signature="1048:1294" ph="{...}" />
-                <marker date="1522677342372" expanded="true" signature="1366:1685" ph="{...}" />
-                <marker date="1522677342372" expanded="true" signature="1745:2633" ph="{...}" />
-                <marker date="1522677342372" expanded="true" signature="2695:4439" ph="{...}" />
-                <marker date="1522677342372" expanded="false" signature="4478:4489" ph=" { " />
-                <marker date="1522677342372" expanded="false" signature="4508:4514" ph=" }" />
-                <marker date="1522677342372" expanded="true" signature="4586:5077" ph="{...}" />
-                <marker date="1522677342372" expanded="false" signature="5109:5120" ph=" { " />
-                <marker date="1522677342372" expanded="false" signature="5139:5145" ph=" }" />
-                <marker date="1522677342372" expanded="true" signature="5292:5805" ph="{...}" />
-                <marker date="1522677342372" expanded="false" signature="5832:5843" ph=" { " />
-                <marker date="1522677342372" expanded="false" signature="5880:5886" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassHierarchyFactory.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/ClassHierarchyFactory.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-              <folding>
-                <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1522677342372" expanded="false" signature="144:459" ph="..." />
-                <marker date="1522677342372" expanded="true" signature="533:540" ph="{}" />
-                <marker date="1522677342372" expanded="true" signature="632:862" ph="{...}" />
-                <marker date="1522677342372" expanded="true" signature="980:1215" ph="{...}" />
-                <marker date="1522677342372" expanded="true" signature="1335:1666" ph="{...}" />
-                <marker date="1522677342372" expanded="true" signature="1812:1904" ph="{...}" />
-                <marker date="1522677342372" expanded="true" signature="2049:2167" ph="{...}" />
-                <marker date="1522677342372" expanded="true" signature="2306:2423" ph="{...}" />
-                <marker date="1522677342372" expanded="true" signature="2588:2816" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -439,10 +380,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="724" />
+    <option name="height" value="717" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -460,13 +401,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="NPEDectetor" type="b2602c69:ProjectViewProjectNode" />
               <item name="NPEDectetor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NPEDectetor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NPEDectetor" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NPEDectetor" type="b2602c69:ProjectViewProjectNode" />
@@ -509,9 +454,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -591,6 +537,18 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="NPEDectetor" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -656,42 +614,43 @@
       <option name="presentableId" value="Default" />
       <updated>1522676356933</updated>
       <workItem from="1522676361186" duration="3298000" />
-      <workItem from="1522684473193" duration="4477000" />
+      <workItem from="1522684473193" duration="6164000" />
+      <workItem from="1522763510089" duration="14000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7775000" />
+    <option name="totallyTimeSpent" value="9476000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="716" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="717" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14331724" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28917608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2657512" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14331724" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -707,23 +666,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Java60RegressionExclusions.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/NPEDectetor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2880">
-          <caret line="192" column="21" lean-forward="false" selection-start-line="192" selection-start-column="21" selection-end-line="192" selection-end-column="21" />
+        <state relative-caret-position="750">
+          <caret line="91" column="24" lean-forward="false" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#dumpResult#0;class#NPEDectetor#0" expanded="false" />
             <element signature="method#buildScoreSet#0;class#NPEDectetor#0" expanded="false" />
-            <element signature="e#4811#4822#0" expanded="true" />
             <element signature="method#checkParameter#0;class#NPEDectetor#0" expanded="false" />
             <element signature="method#findJarFiles#0;class#NPEDectetor#0" expanded="false" />
             <element signature="method#findAllReturnNullNode#0;class#NPEDectetor#0" expanded="false" />
@@ -735,341 +685,87 @@
             <element signature="method#getFinalRefernces#0;class#NPEDectetor#0" expanded="false" />
             <element signature="method#filterByIfNENull#0;class#NPEDectetor#0" expanded="false" />
             <element signature="method#controlByNENull#0;class#NPEDectetor#0" expanded="false" />
-            <element signature="e#18094#18110#0" expanded="true" />
             <element signature="method#findPreBB#0;class#NPEDectetor#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/io/File.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Java60RegressionExclusions.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="147" column="13" lean-forward="false" selection-start-line="147" selection-start-column="13" selection-end-line="147" selection-end-column="13" />
+        <state relative-caret-position="225">
+          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/util/io/FileProvider.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/org/apache/log4j/DailyRollingFileAppender.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
-            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1522677342372" expanded="false" signature="144:883" ph="..." />
-            <marker date="1522677342372" expanded="true" signature="1045:1052" ph="{}" />
-            <marker date="1522677342372" expanded="true" signature="1125:1217" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1310:1382" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1428:1643" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1709:1989" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2051:2262" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2344:2413" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2520:3402" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="3523:4149" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="4251:5843" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="5888:6300" ph="{...}" />
+            <marker date="1512287851000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1512287851000" expanded="false" signature="140:412" ph="..." />
+            <marker date="1512287851000" expanded="true" signature="1129:1136" ph="{}" />
+            <marker date="1512287851000" expanded="true" signature="1245:1363" ph="{...}" />
+            <marker date="1512287851000" expanded="false" signature="1411:1422" ph=" { " />
+            <marker date="1512287851000" expanded="false" signature="1449:1455" ph=" }" />
+            <marker date="1512287851000" expanded="false" signature="1491:1502" ph=" { " />
+            <marker date="1512287851000" expanded="false" signature="1526:1532" ph=" }" />
+            <marker date="1512287851000" expanded="true" signature="1568:2208" ph="{...}" />
+            <marker date="1512287851000" expanded="true" signature="2246:3138" ph="{...}" />
+            <marker date="1512287851000" expanded="true" signature="3169:3943" ph="{...}" />
+            <marker date="1512287851000" expanded="true" signature="3984:5200" ph="{...}" />
+            <marker date="1512287851000" expanded="true" signature="5251:5783" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.util/1.4.3/com.ibm.wala.util-1.4.3.jar!/com/ibm/wala/util/collections/HashMapFactory.class">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="600">
+          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/properties/WalaProperties.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="89" column="63" lean-forward="false" selection-start-line="89" selection-start-column="63" selection-end-line="89" selection-end-column="63" />
+          <folding>
+            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1522677342372" expanded="false" signature="147:524" ph="..." />
+            <marker date="1522677342372" expanded="true" signature="1446:1453" ph="{}" />
+            <marker date="1522677342372" expanded="true" signature="1500:2070" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="2117:2598" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="2658:3120" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="3189:3792" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="3843:4000" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="4110:5382" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="5443:6464" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="6470:6488" ph="/**...*/" />
+            <marker date="1522677342372" expanded="true" signature="6547:6965" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.util/1.4.3/com.ibm.wala.util-1.4.3.jar!/com/ibm/wala/util/WalaException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <marker date="1522676958582" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1522676958582" expanded="false" signature="153:225" ph="..." />
-            <marker date="1522676958582" expanded="true" signature="285:292" ph="{}" />
-            <marker date="1522676958582" expanded="false" signature="347:358" ph=" { " />
-            <marker date="1522676958582" expanded="false" signature="389:395" ph=" }" />
-            <marker date="1522676958582" expanded="false" signature="442:453" ph=" { " />
-            <marker date="1522676958582" expanded="false" signature="480:486" ph=" }" />
-            <marker date="1522676958582" expanded="true" signature="545:703" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/ExitAndExceptionPrunedCFG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/ClassHierarchyException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1522677342372" expanded="false" signature="355:366" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="380:386" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/IClassHierarchyDweller.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding>
-            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/ScoreNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/IClassHierarchyDweller.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding>
-            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/ClassHierarchyException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1522677342372" expanded="false" signature="355:366" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="380:386" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.util/1.4.3/com.ibm.wala.util-1.4.3.jar!/com/ibm/wala/util/collections/HashMapFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="32" />
-          <folding>
-            <marker date="1522676958582" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1522676958582" expanded="false" signature="153:225" ph="..." />
-            <marker date="1522676958582" expanded="true" signature="285:292" ph="{}" />
-            <marker date="1522676958582" expanded="false" signature="347:358" ph=" { " />
-            <marker date="1522676958582" expanded="false" signature="389:395" ph=" }" />
-            <marker date="1522676958582" expanded="false" signature="442:453" ph=" { " />
-            <marker date="1522676958582" expanded="false" signature="480:486" ph=" }" />
-            <marker date="1522676958582" expanded="true" signature="545:703" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/util/io/FileProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding>
-            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1522677342372" expanded="false" signature="144:883" ph="..." />
-            <marker date="1522677342372" expanded="true" signature="1045:1052" ph="{}" />
-            <marker date="1522677342372" expanded="true" signature="1125:1217" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1310:1382" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1428:1643" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1709:1989" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2051:2262" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2344:2413" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2520:3402" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="3523:4149" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="4251:5843" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="5888:6300" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.util/1.4.3/com.ibm.wala.util-1.4.3.jar!/com/ibm/wala/util/collections/HashSetFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/ExitAndExceptionPrunedCFG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/io/FileSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="239" column="59" lean-forward="false" selection-start-line="239" selection-start-column="59" selection-end-line="239" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/ScoreNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/util/config/AnalysisScopeReader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="174" column="32" lean-forward="false" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
-          <folding>
-            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1522677342372" expanded="false" signature="148:881" ph="..." />
-            <marker date="1522677342372" expanded="true" signature="1115:1122" ph="{}" />
-            <marker date="1522677342372" expanded="true" signature="1256:1405" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1551:3022" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="3167:4248" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="4370:6807" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="6901:6988" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="7108:7483" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="7596:9843" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/callgraph/AnalysisScope.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-          <folding>
-            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1522677342372" expanded="false" signature="150:1669" ph="..." />
-            <marker date="1522677342372" expanded="true" signature="2617:2762" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2797:2923" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2962:3509" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="3573:3843" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="3915:4102" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="4146:4157" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="4199:4205" ph=" }" />
-            <marker date="1522677342372" expanded="true" signature="4267:4348" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="4403:4414" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="4448:4454" ph=" }" />
-            <marker date="1522677342372" expanded="false" signature="4508:4519" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="4552:4558" ph=" }" />
-            <marker date="1522677342372" expanded="false" signature="4614:4625" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="4660:4666" ph=" }" />
-            <marker date="1522677342372" expanded="false" signature="4720:4731" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="4764:4770" ph=" }" />
-            <marker date="1522677342372" expanded="false" signature="4818:4829" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="4860:4866" ph=" }" />
-            <marker date="1522677342372" expanded="true" signature="4912:5251" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="5379:5528" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="5665:5803" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="5875:5997" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="6065:6283" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="6333:6866" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="6938:7159" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="7246:7579" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="7651:7727" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="7786:7797" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="7842:7848" ph=" }" />
-            <marker date="1522677342372" expanded="true" signature="7924:8205" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="8264:8351" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="8388:8399" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="8441:8447" ph=" }" />
-            <marker date="1522677342372" expanded="false" signature="8488:8499" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="8522:8528" ph=" }" />
-            <marker date="1522677342372" expanded="false" signature="8581:8592" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="8618:8624" ph=" }" />
-            <marker date="1522677342372" expanded="true" signature="8655:9346" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="9389:9400" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="9440:9446" ph=" }" />
-            <marker date="1522677342372" expanded="true" signature="9549:10013" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="10079:10252" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="10303:10314" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="10343:10349" ph=" }" />
-            <marker date="1522677342372" expanded="true" signature="10382:11093" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="11166:12081" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="12151:12221" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="12291:12361" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="12431:12501" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="12571:12641" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="12711:12781" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="12872:16469" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/ClassHierarchyFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding>
-            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1522677342372" expanded="false" signature="144:459" ph="..." />
-            <marker date="1522677342372" expanded="true" signature="533:540" ph="{}" />
-            <marker date="1522677342372" expanded="true" signature="632:862" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="980:1215" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1335:1666" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1812:1904" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2049:2167" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2306:2423" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2588:2816" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/callgraph/Entrypoint.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding>
-            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1522677342372" expanded="false" signature="150:904" ph="..." />
-            <marker date="1522677342372" expanded="true" signature="1048:1294" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1366:1685" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="1745:2633" ph="{...}" />
-            <marker date="1522677342372" expanded="true" signature="2695:4439" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="4478:4489" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="4508:4514" ph=" }" />
-            <marker date="1522677342372" expanded="true" signature="4586:5077" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="5109:5120" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="5139:5145" ph=" }" />
-            <marker date="1522677342372" expanded="true" signature="5292:5805" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="5832:5843" ph=" { " />
-            <marker date="1522677342372" expanded="false" signature="5880:5886" ph=" }" />
+            <marker date="1522676958582" expanded="false" signature="304:315" ph=" { " />
+            <marker date="1522676958582" expanded="false" signature="331:337" ph=" }" />
+            <marker date="1522676958582" expanded="false" signature="378:389" ph=" { " />
+            <marker date="1522676958582" expanded="false" signature="403:409" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/callgraph/propagation/PropagationCallGraphBuilder.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
+        <state relative-caret-position="1155">
           <caret line="122" column="21" lean-forward="false" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
           <folding>
             <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
@@ -1162,8 +858,8 @@
             <marker date="1522677342372" expanded="false" signature="19225:19240" ph=" { " />
             <marker date="1522677342372" expanded="false" signature="19265:19275" ph=" }" />
             <marker date="1522677342372" expanded="true" signature="19361:21855" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="19658:19723" ph="act(i) → {" />
-            <marker date="1522677342372" expanded="false" signature="21430:21453" ph="}" />
+            <marker date="1522677342372" expanded="true" signature="19677:21453" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="19722:21435" ph="{...}" />
             <marker date="1522677342372" expanded="false" signature="21886:21901" ph=" { " />
             <marker date="1522677342372" expanded="false" signature="21940:21950" ph=" }" />
             <marker date="1522677342372" expanded="true" signature="21992:22354" ph="{...}" />
@@ -1174,8 +870,8 @@
             <marker date="1522677342372" expanded="false" signature="22797:22807" ph=" }" />
             <marker date="1522677342372" expanded="true" signature="22885:22966" ph="{...}" />
             <marker date="1522677342372" expanded="true" signature="23052:24432" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="23349:23414" ph="act(i) → {" />
-            <marker date="1522677342372" expanded="false" signature="24007:24030" ph="}" />
+            <marker date="1522677342372" expanded="true" signature="23368:24030" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="23413:24012" ph="{...}" />
             <marker date="1522677342372" expanded="false" signature="24463:24478" ph=" { " />
             <marker date="1522677342372" expanded="false" signature="24541:24551" ph=" }" />
             <marker date="1522677342372" expanded="true" signature="24593:24986" ph="{...}" />
@@ -1188,8 +884,8 @@
             <marker date="1522677342372" expanded="false" signature="25616:25631" ph=" { " />
             <marker date="1522677342372" expanded="false" signature="25643:25653" ph=" }" />
             <marker date="1522677342372" expanded="true" signature="25709:27447" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="26393:26458" ph="act(i) → {" />
-            <marker date="1522677342372" expanded="false" signature="27022:27045" ph="}" />
+            <marker date="1522677342372" expanded="true" signature="26412:27045" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="26457:27027" ph="{...}" />
             <marker date="1522677342372" expanded="false" signature="27503:27518" ph=" { " />
             <marker date="1522677342372" expanded="false" signature="27531:27541" ph=" }" />
             <marker date="1522677342372" expanded="false" signature="27572:27587" ph=" { " />
@@ -1205,8 +901,8 @@
             <marker date="1522677342372" expanded="false" signature="28865:28880" ph=" { " />
             <marker date="1522677342372" expanded="false" signature="28960:28970" ph=" }" />
             <marker date="1522677342372" expanded="true" signature="29026:30557" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="29468:29533" ph="act(i) → {" />
-            <marker date="1522677342372" expanded="false" signature="30132:30155" ph="}" />
+            <marker date="1522677342372" expanded="true" signature="29487:30155" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="29532:30137" ph="{...}" />
             <marker date="1522677342372" expanded="false" signature="30613:30628" ph=" { " />
             <marker date="1522677342372" expanded="false" signature="30641:30651" ph=" }" />
             <marker date="1522677342372" expanded="false" signature="30682:30697" ph=" { " />
@@ -1236,8 +932,418 @@
             <marker date="1522677342372" expanded="false" signature="34206:34216" ph=" }" />
             <marker date="1522677342372" expanded="true" signature="34276:34392" ph="{...}" />
             <marker date="1522677342372" expanded="true" signature="34448:36092" ph="{...}" />
-            <marker date="1522677342372" expanded="false" signature="34821:34886" ph="act(i) → {" />
-            <marker date="1522677342372" expanded="false" signature="35640:35663" ph="}" />
+            <marker date="1522677342372" expanded="true" signature="34840:35663" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="34885:35645" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="36123:36138" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="36169:36179" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="36220:36235" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="36258:36268" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="36312:36327" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="36339:36349" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="36385:36400" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="36412:36422" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="36533:37400" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="36570:36581" ph="{}" />
+            <marker date="1522677342372" expanded="true" signature="36662:37088" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="37124:37139" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="37152:37162" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="37196:37211" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="37228:37238" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="37281:37296" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="37315:37325" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="37356:37371" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="37384:37394" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="37478:38828" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="37649:37774" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="37838:38003" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="38046:38061" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="38101:38111" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="38155:38515" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="38546:38561" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="38620:38630" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="38664:38679" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="38733:38743" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="38780:38795" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="38812:38822" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="38894:39341" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="38976:39039" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="39071:39086" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="39137:39147" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="39246:39335" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="39412:39928" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="39511:39592" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="39624:39639" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="39699:39709" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="39819:39922" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Java60RegressionExclusions.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/NPEDectetor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2880">
+          <caret line="192" column="21" lean-forward="false" selection-start-line="192" selection-start-column="21" selection-end-line="192" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#dumpResult#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#buildScoreSet#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#checkParameter#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#findJarFiles#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#findAllReturnNullNode#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#isReturnNullNode#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#isReturnNullInstruction#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#findCaller#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#findCallers#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#findSSAMayReferenceNull#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#getFinalRefernces#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#filterByIfNENull#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#controlByNENull#0;class#NPEDectetor#0" expanded="false" />
+            <element signature="method#findPreBB#0;class#NPEDectetor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="147" column="13" lean-forward="false" selection-start-line="147" selection-start-column="13" selection-end-line="147" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/util/io/FileProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.util/1.4.3/com.ibm.wala.util-1.4.3.jar!/com/ibm/wala/util/collections/HashMapFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/ExitAndExceptionPrunedCFG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/ClassHierarchyException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/IClassHierarchyDweller.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/ScoreNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/IClassHierarchyDweller.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/ClassHierarchyException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.util/1.4.3/com.ibm.wala.util-1.4.3.jar!/com/ibm/wala/util/collections/HashMapFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/util/io/FileProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.util/1.4.3/com.ibm.wala.util-1.4.3.jar!/com/ibm/wala/util/collections/HashSetFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/ExitAndExceptionPrunedCFG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/io/FileSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home/lib/src.zip!/java.base/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="239" column="59" lean-forward="false" selection-start-line="239" selection-start-column="59" selection-end-line="239" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/ScoreNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/util/config/AnalysisScopeReader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="174" column="32" lean-forward="false" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/callgraph/AnalysisScope.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/cha/ClassHierarchyFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/callgraph/Entrypoint.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/ipa/callgraph/propagation/PropagationCallGraphBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="122" column="21" lean-forward="false" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
+          <folding>
+            <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1522677342372" expanded="false" signature="162:2190" ph="..." />
+            <marker date="1522677342372" expanded="false" signature="3967:3978" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="3997:4003" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="4156:4985" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="5086:5170" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="5225:5306" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="5417:5492" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="5645:7713" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="7783:7893" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="7981:7988" ph="{}" />
+            <marker date="1522677342372" expanded="true" signature="8203:8598" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="8674:8761" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="8872:9007" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="9114:9236" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="9348:9473" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="9538:9618" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="9694:9785" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="9847:9975" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="10058:10544" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="10613:10920" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="11029:11171" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="11290:11926" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="12023:12745" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="12841:13127" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="13175:13186" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="13202:13208" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="13249:13260" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="13280:13286" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="13325:13336" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="13365:13371" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="13416:13427" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="13449:13455" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="13530:13636" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="13698:13709" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="13757:13763" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="13816:13827" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="13846:13852" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="13905:13916" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="13946:13952" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="14016:14027" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="14059:14065" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="14123:14134" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="14165:14171" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="14283:14979" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="15028:15039" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="15067:15073" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="15135:15146" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="15178:15184" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="15233:15244" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="15275:15281" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="15339:15350" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="15381:15387" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="15482:15575" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="15682:15783" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="15863:15945" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="16037:16130" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="16182:16193" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="16235:16241" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="16293:16304" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="16334:16340" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="16385:16396" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="16427:16433" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="16479:16568" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="16616:16714" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="16789:16857" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="16917:16928" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="16978:16984" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="17046:17376" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="17419:17430" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="17449:17455" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="17565:17639" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="17819:17830" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="17856:17862" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="17906:17988" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="17971:17982" ph="{}" />
+            <marker date="1522677342372" expanded="true" signature="18083:18830" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="18123:18138" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="18146:18156" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="18190:18205" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="18228:18238" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="18274:18289" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="18302:18312" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="18393:18824" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="18953:22433" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="19106:19121" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="19150:19160" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="19225:19240" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="19265:19275" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="19361:21855" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="19677:21453" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="19722:21435" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="21886:21901" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="21940:21950" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="21992:22354" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="22390:22405" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="22417:22427" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="22554:25065" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="22743:22758" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="22797:22807" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="22885:22966" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="23052:24432" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="23368:24030" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="23413:24012" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="24463:24478" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="24541:24551" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="24593:24986" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="25022:25037" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="25049:25059" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="25153:28411" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="25298:25313" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="25349:25359" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="25432:25580" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="25616:25631" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="25643:25653" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="25709:27447" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="26412:27045" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="26457:27027" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="27503:27518" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="27531:27541" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="27572:27587" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="27660:27670" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="27712:28090" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="28169:28243" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="28280:28295" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="28313:28323" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="28367:28382" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="28395:28405" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="28499:31451" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="28683:28831" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="28865:28880" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="28960:28970" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="29026:30557" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="29487:30155" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="29532:30137" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="30613:30628" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="30641:30651" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="30682:30697" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="30770:30780" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="30822:31211" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="31248:31263" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="31281:31291" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="31335:31350" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="31362:31372" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="31408:31423" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="31435:31445" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="31547:33968" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="31581:31596" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="31616:31626" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="31687:31803" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="31859:33631" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="33662:33677" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="33708:33718" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="33754:33769" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="33781:33791" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="33832:33847" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="33870:33880" ph=" }" />
+            <marker date="1522677342372" expanded="false" signature="33924:33939" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="33952:33962" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="34063:36428" ph="{...}" />
+            <marker date="1522677342372" expanded="false" signature="34172:34187" ph=" { " />
+            <marker date="1522677342372" expanded="false" signature="34206:34216" ph=" }" />
+            <marker date="1522677342372" expanded="true" signature="34276:34392" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="34448:36092" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="34840:35663" ph="{...}" />
+            <marker date="1522677342372" expanded="true" signature="34885:35645" ph="{...}" />
             <marker date="1522677342372" expanded="false" signature="36123:36138" ph=" { " />
             <marker date="1522677342372" expanded="false" signature="36169:36179" ph=" }" />
             <marker date="1522677342372" expanded="false" signature="36220:36235" ph=" { " />
@@ -1299,7 +1405,7 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/ibm/wala/com.ibm.wala.core/1.4.3/com.ibm.wala.core-1.4.3.jar!/com/ibm/wala/properties/WalaProperties.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
+        <state relative-caret-position="1125">
           <caret line="89" column="63" lean-forward="false" selection-start-line="89" selection-start-column="63" selection-end-line="89" selection-end-column="63" />
           <folding>
             <marker date="1522677342372" expanded="false" signature="0:104" ph="/.../" />
@@ -1323,7 +1429,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1331,7 +1436,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
+        <state relative-caret-position="600">
           <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding />
         </state>
@@ -1339,7 +1444,7 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/org/apache/log4j/DailyRollingFileAppender.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
+        <state relative-caret-position="90">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <marker date="1512287851000" expanded="false" signature="0:104" ph="/.../" />
@@ -1369,13 +1474,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lujie/NPEDectetor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="91" column="24" lean-forward="true" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+        <state relative-caret-position="750">
+          <caret line="91" column="24" lean-forward="false" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#dumpResult#0;class#NPEDectetor#0" expanded="false" />
             <element signature="method#buildScoreSet#0;class#NPEDectetor#0" expanded="false" />
-            <element signature="e#4811#4822#0" expanded="true" />
             <element signature="method#checkParameter#0;class#NPEDectetor#0" expanded="false" />
             <element signature="method#findJarFiles#0;class#NPEDectetor#0" expanded="false" />
             <element signature="method#findAllReturnNullNode#0;class#NPEDectetor#0" expanded="false" />
@@ -1387,16 +1491,29 @@
             <element signature="method#getFinalRefernces#0;class#NPEDectetor#0" expanded="false" />
             <element signature="method#filterByIfNENull#0;class#NPEDectetor#0" expanded="false" />
             <element signature="method#controlByNENull#0;class#NPEDectetor#0" expanded="false" />
-            <element signature="e#18094#18110#0" expanded="true" />
             <element signature="method#findPreBB#0;class#NPEDectetor#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logs/debug.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/error.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        <state relative-caret-position="152">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
           <folding />
         </state>
       </provider>
