@@ -3,18 +3,10 @@ package com.lujie;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Properties;
-import java.util.Set;
 
 import com.ibm.wala.cfg.cdg.ControlDependenceGraph;
-import com.ibm.wala.cfg.exc.intra.SSACFGNullPointerAnalysis;
 import com.ibm.wala.classLoader.CallSiteReference;
 import com.ibm.wala.ipa.callgraph.AnalysisCacheImpl;
 import com.ibm.wala.ipa.callgraph.AnalysisOptions;
@@ -26,13 +18,11 @@ import com.ibm.wala.ipa.callgraph.CallGraphBuilderCancelException;
 import com.ibm.wala.ipa.callgraph.CallGraphStats;
 import com.ibm.wala.ipa.callgraph.Entrypoint;
 import com.ibm.wala.ipa.callgraph.impl.AllApplicationEntrypoints;
-import com.ibm.wala.ipa.cfg.ExceptionPrunedCFG;
 import com.ibm.wala.ipa.cfg.PrunedCFG;
 import com.ibm.wala.ipa.cha.ClassHierarchy;
 import com.ibm.wala.ipa.cha.ClassHierarchyException;
 import com.ibm.wala.ipa.cha.ClassHierarchyFactory;
 import com.ibm.wala.properties.WalaProperties;
-import com.ibm.wala.shrikeBT.ArrayLengthInstruction;
 import com.ibm.wala.ssa.DefUse;
 import com.ibm.wala.ssa.IR;
 import com.ibm.wala.ssa.ISSABasicBlock;
@@ -49,45 +39,76 @@ import com.ibm.wala.util.collections.HashMapFactory;
 import com.ibm.wala.util.collections.HashSetFactory;
 import com.ibm.wala.util.collections.Pair;
 import com.ibm.wala.util.config.AnalysisScopeReader;
-import com.ibm.wala.util.intset.IntSet;
 import com.ibm.wala.util.io.FileProvider;
 import com.ibm.wala.util.io.FileUtil;
-import com.sun.xml.internal.bind.v2.TODO;
+import org.apache.log4j.Logger;
 
 /**
- * 
- * */
+ * NPE分析工具的入口类
+ * @author lujie
+ */
 public class NPEDectetor {
+    private static Logger logger = Logger.getLogger(NPEDectetor.class);
+    /**
+     * 分析的项目所在的目录路径
+     */
 	private String jarDir = null;
+    /**
+     * 函数调用关系图
+     */
 	private CallGraph callGraph = null;
-	// if project is too large, we should use
-	// faster but not precise mainEntrypoints
+    /**
+     * 依据项目的大小，选择是否需要精确分析main
+     * 默认为false
+     */
 	private boolean mainEntrypoints = false;
+    /**
+     * 设置100000000为大项目的阈值
+     */
 	private static long CUTOFF_SIZE = 100000000;
+    /**
+     * 类的层次结构
+     */
 	private ClassHierarchy cha = null;
+    /**
+     * 存储节点分数的map
+     */
 	private Map<CGNode, Integer> checkedCalleeCount;
-	private Map<CGNode, CGNode> trasnCalleeToRootCallee;
+    /**
+     *
+     */
+	private Map<CGNode, CGNode> transCalleeToRootCallee;
 
 	public NPEDectetor() {
-		this.checkedCalleeCount = HashMapFactory.make();
-		trasnCalleeToRootCallee = HashMapFactory.make();
+		this.checkedCalleeCount = new HashMap<CGNode, Integer>();
+		this.transCalleeToRootCallee = new HashMap<CGNode, CGNode>();
 	}
 
 	public static void main(String[] args) throws IOException,
 			ClassHierarchyException, IllegalArgumentException,
 			CallGraphBuilderCancelException {
-		NPEDectetor dectetor = new NPEDectetor();
+		logger.info("test log...");
+	    NPEDectetor dectetor = new NPEDectetor();
+        //  1 检查JER version
 		dectetor.checkJREVersion();
+		//  2 检查参数是否合法
 		dectetor.checkParameter(args);
+		//  3 创建函数调用关系图
 		dectetor.makeCallGraph();
-		System.out.println("start to find potential NPE");
+		logger.info("starting to find potential NPE");
+        //  4 找出所有返回null的函数集合
 		Collection<CGNode> returnNullNodes = dectetor.findAllReturnNullNode();
+		//  5 找出callee与caller之间的对应关系
 		Map<CGNode, Set<CGNode>> calleeMap2Callers = dectetor
 				.findCallers(returnNullNodes);
+		//  6
 		Map<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>> ssaMayReferenceNull = dectetor
 				.findSSAMayReferenceNull(calleeMap2Callers);
+		//  7 过滤
 		dectetor.filterByIfNENull(ssaMayReferenceNull);
+		//  8 按分数排序节点
 		Set<ScoreNode> scoreNodes = dectetor.buildScoreSet(ssaMayReferenceNull);
+		//  9 输出结果
 		dectetor.dumpResult(args[1], scoreNodes);
 	}
 
@@ -121,6 +142,11 @@ public class NPEDectetor {
 		}
 	}
 
+    /**
+     *
+     * @param map
+     * @return
+     */
 	private Set<ScoreNode> buildScoreSet(
 			Map<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>> map) {
 		Iterator<Entry<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>>> entryIterator = map
@@ -131,7 +157,7 @@ public class NPEDectetor {
 			Entry<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>> entry = entryIterator
 					.next();
 			CGNode caller = entry.getKey().fst;
-			CGNode callee = trasnCalleeToRootCallee.get(entry.getKey().snd);
+			CGNode callee = transCalleeToRootCallee.get(entry.getKey().snd);
 			Set<CGNode> callers = calleeMap2Callers.get(callee);
 			if (callers == null) {
 				callers = HashSetFactory.make();
@@ -153,95 +179,120 @@ public class NPEDectetor {
 		return ret;
 	}
 
+    /**
+     *
+     * @param args
+     */
 	private void checkParameter(String[] args) {
 		if (args.length != 2) {
-			System.out.println("wrong parameter number");
+			// logger error
+		    System.out.println("wrong parameter number");
 			System.exit(1);
 		}
 		jarDir = args[0];
+		// jarDir should be a directory
 		if (!(new File(jarDir).isDirectory())) {
+
 			System.out.println("wrong tart jar directory");
 			System.exit(1);
 		}
 	}
 
+    /**
+     * 构建函数调用关系图
+     * @throws IOException
+     * @throws ClassHierarchyException
+     * @throws IllegalArgumentException
+     * @throws CallGraphBuilderCancelException
+     */
 	private void makeCallGraph() throws IOException, ClassHierarchyException,
 			IllegalArgumentException, CallGraphBuilderCancelException {
-		long start_time = System.currentTimeMillis();
+
+	    long start_time = System.currentTimeMillis();
+		// logger
 		System.out.println("start to make call graph");
+
 		FileProvider fileProvider = new FileProvider();
+		// 排除一些文件
 		File exclusionsFile = fileProvider
 				.getFile("Java60RegressionExclusions.txt");
+
 		String jarFiles = findJarFiles(new String[] { jarDir });
+        //
 		AnalysisScope scope = AnalysisScopeReader.makeJavaBinaryAnalysisScope(
 				jarFiles, exclusionsFile);
+        // 存储类的层次结构信息
 		cha = ClassHierarchyFactory.make(scope);
+
 		Iterable<Entrypoint> entryPointIterator = null;
+
 		if (mainEntrypoints) {
-			entryPointIterator = com.ibm.wala.ipa.callgraph.impl.Util
+		    // 指定main方法分析
+            entryPointIterator = com.ibm.wala.ipa.callgraph.impl.Util
 					.makeMainEntrypoints(scope, cha);
 		} else {
+		    // 精确分析
 			entryPointIterator = new AllApplicationEntrypoints(scope, cha);
 		}
+        //
 		AnalysisOptions options = new AnalysisOptions(scope, entryPointIterator);
 		// 0-CFA is faster and more precise
-		CallGraphBuilder<?> builder = com.ibm.wala.ipa.callgraph.impl.Util
+        //
+        CallGraphBuilder<?> builder = com.ibm.wala.ipa.callgraph.impl.Util
 				.makeZeroCFABuilder(options, new AnalysisCacheImpl(), cha,
 						scope);
+        //
 		callGraph = builder.makeCallGraph(options, null);
+		// logger info
 		System.out.println(CallGraphStats.getStats(callGraph));
 		System.out.println("Time spent ont building CHA and CG:"
 				+ (System.currentTimeMillis() - start_time) + "ms");
 	}
 
 	private String findJarFiles(String[] directories) {
+	    // 所分析的项目的大小
 		long size = 0;
-		Collection<String> result = HashSetFactory.make();
+        StringBuffer result = new StringBuffer();
 		for (int i = 0; i < directories.length; i++) {
 			for (File f : FileUtil.listFiles(directories[i], ".*\\.jar", true)) {
-				result.add(f.getAbsolutePath());
+                result.append(f.getAbsolutePath());
+                result.append(File.pathSeparator);
 				size += f.length();
 			}
 		}
-		StringBuilder message = new StringBuilder();
-		message.append("project size is ");
-		message.append(size);
-		message.append(" so use ");
+        // logger size
 		if (size > CUTOFF_SIZE) {
-			message.append("MainApplciationEntryPoint");
+		    //logger  MainApplciationEntryPoint
+			// 设置入口方法点
 			mainEntrypoints = true;
 		}else{
-			message.append("AllApplciationEntryPoint");
+            // 不设置入口方法点
+            // logger AllApplciationEntryPoint
 		}
-		System.out.println(message);
-		return composeString(result);
+		return result.substring(0, result.length()-1).toString();
 	}
 
-	private String composeString(Collection<String> s) {
-		StringBuffer result = new StringBuffer();
-		Iterator<String> it = s.iterator();
-		for (int i = 0; i < s.size() - 1; i++) {
-			result.append(it.next());
-			result.append(File.pathSeparator);
-		}
-		result.append(it.next());
-		return result.toString();
-	}
-
+	// 检查JRE版本
 	private void checkJREVersion() {
 		try {
 			Properties p = WalaProperties.loadProperties();
 			String javaHome = p.getProperty(WalaProperties.J2SE_DIR);
 			if (!javaHome.contains("1.7")) {
+			    // logger error
 				System.err
 						.println("check your javahome wrong jdk version , must be 1.7");
 			}
 		} catch (WalaException e) {
+		    // logger.error
 			e.printStackTrace();
 			System.exit(1);
 		}
 	}
 
+    /**
+     *
+     * @return
+     */
 	private Collection<CGNode> findAllReturnNullNode() {
 		Set<CGNode> returnNullNodes = HashSetFactory.make();
 		for (CGNode node : callGraph) {
@@ -257,10 +308,16 @@ public class NPEDectetor {
 		return returnNullNodes;
 	}
 
+    /**
+     *
+     * @param node
+     * @return
+     */
 	private boolean isReturnNullNode(CGNode node) {
 		IR ir = node.getIR();
-		if (ir == null)
-			return false;
+		if (ir == null) {
+            return false;
+        }
 		for (SSAInstruction ins : ir.getInstructions()) {
 			if (ins instanceof SSAReturnInstruction
 					&& isReturnNullInstruction((SSAReturnInstruction) ins, node)) {
@@ -270,6 +327,12 @@ public class NPEDectetor {
 		return false;
 	}
 
+    /**
+     *
+     * @param returnIns
+     * @param node
+     * @return
+     */
 	private boolean isReturnNullInstruction(SSAReturnInstruction returnIns,
 			CGNode node) {
 		IR ir = node.getIR();
@@ -298,11 +361,19 @@ public class NPEDectetor {
 		return false;
 	}
 
+    /**
+     * 找一个callee对应的所有caller
+     * @param rootCallee
+     * @param transcallee
+     * @param checkedNode
+     * @return
+     */
 	private Collection<Pair<CGNode, CGNode>> findCaller(CGNode rootCallee,
 			CGNode transcallee, Collection<CGNode> checkedNode) {
 		Set<Pair<CGNode, CGNode>> ret = HashSetFactory.make();
-		if (checkedNode.contains(transcallee))
-			return ret;
+		if (checkedNode.contains(transcallee)) {
+            return ret;
+        }
 		checkedNode.add(transcallee);
 		Iterator<CGNode> callerIterator = callGraph.getPredNodes(transcallee);
 		while (callerIterator.hasNext()) {
@@ -326,7 +397,7 @@ public class NPEDectetor {
 						SSAInstruction useInstruction = useIterator.next();
 						if (!(useInstruction instanceof SSAReturnInstruction)) {
 							ret.add(Pair.make(caller, transcallee));
-							trasnCalleeToRootCallee
+                            transCalleeToRootCallee
 									.put(transcallee, rootCallee);
 							continue;
 						}
@@ -338,6 +409,11 @@ public class NPEDectetor {
 		return ret;
 	}
 
+    /**
+     * 找出callee的所有caller
+     * @param returnNullNodes 返回null的函数集合
+     * @return callee与caller的对应关系
+     */
 	private Map<CGNode, Set<CGNode>> findCallers(
 			Collection<CGNode> returnNullNodes) {
 		Map<CGNode, Set<CGNode>> calleeMapCallers = HashMapFactory.make();
@@ -360,6 +436,11 @@ public class NPEDectetor {
 		return calleeMapCallers;
 	}
 
+    /**
+     *
+     * @param calleeMapCallers
+     * @return
+     */
 	private Map<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>> findSSAMayReferenceNull(
 			Map<CGNode, Set<CGNode>> calleeMapCallers) {
 		Map<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>> result = HashMapFactory
@@ -411,6 +492,12 @@ public class NPEDectetor {
 		return result;
 	}
 
+    /**
+     *
+     * @param def
+     * @param node
+     * @return
+     */
 	private Set<Pair<CGNode, SSAInstruction>> getFinalRefernces(int def,
 			CGNode node) {
 		Set<Pair<CGNode, SSAInstruction>> refernces = HashSetFactory.make();
@@ -479,6 +566,13 @@ public class NPEDectetor {
 	}
 
 	// need to handle if (x==null) exit;
+
+    /**
+     *
+     * @param node
+     * @param ssaInstruction
+     * @return
+     */
 	private boolean controlByNENull(CGNode node, SSAInstruction ssaInstruction) {
 		IR ir = node.getIR();
 		PrunedCFG<SSAInstruction, ISSABasicBlock> exceptionPrunedCFG = ExitAndExceptionPrunedCFG
@@ -510,13 +604,20 @@ public class NPEDectetor {
 		return false;
 	}
 
+    /**
+     *
+     * @param cdg
+     * @param preBBs
+     * @param bb
+     */
 	private void findPreBB(ControlDependenceGraph<ISSABasicBlock> cdg,
 			Set<ISSABasicBlock> preBBs, ISSABasicBlock bb) {
 		Iterator<ISSABasicBlock> preBBIterator = cdg.getPredNodes(bb);
 		while (preBBIterator.hasNext()) {
 			ISSABasicBlock preBB = preBBIterator.next();
-			if (preBBs.contains(preBB))
-				continue;
+			if (preBBs.contains(preBB)) {
+                continue;
+            }
 			preBBs.add(preBB);
 			findPreBB(cdg, preBBs, preBB);
 		}

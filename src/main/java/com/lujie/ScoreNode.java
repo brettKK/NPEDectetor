@@ -5,6 +5,12 @@ import java.util.Set;
 import com.ibm.wala.ipa.callgraph.CGNode;
 import com.ibm.wala.util.collections.Pair;
 
+
+/**
+ * 分数节点
+ * 存储callee与caller的对应关系
+ * @author lujie
+ */
 public class ScoreNode implements Comparable<ScoreNode> {
 	public CGNode node = null;
 	public Set<CGNode> callers = null;
