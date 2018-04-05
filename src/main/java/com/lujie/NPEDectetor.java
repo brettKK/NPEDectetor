@@ -48,7 +48,7 @@ import org.apache.log4j.Logger;
  * @author lujie
  */
 public class NPEDectetor {
-    private static Logger logger = Logger.getLogger(NPEDectetor.class);
+    private static final Logger logger = Logger.getLogger(NPEDectetor.class);
     /**
      * 分析的项目所在的目录路径
      */
@@ -89,27 +89,32 @@ public class NPEDectetor {
 			CallGraphBuilderCancelException {
 		logger.info("test log...");
 	    NPEDectetor dectetor = new NPEDectetor();
-        //  1 检查JER version
+	    try {
+            //  1 检查JER version
 		dectetor.checkJREVersion();
-		//  2 检查参数是否合法
-		dectetor.checkParameter(args);
-		//  3 创建函数调用关系图
-		dectetor.makeCallGraph();
-		logger.info("starting to find potential NPE");
-        //  4 找出所有返回null的函数集合
-		Collection<CGNode> returnNullNodes = dectetor.findAllReturnNullNode();
-		//  5 找出callee与caller之间的对应关系
-		Map<CGNode, Set<CGNode>> calleeMap2Callers = dectetor
-				.findCallers(returnNullNodes);
-		//  6
-		Map<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>> ssaMayReferenceNull = dectetor
-				.findSSAMayReferenceNull(calleeMap2Callers);
-		//  7 过滤
-		dectetor.filterByIfNENull(ssaMayReferenceNull);
-		//  8 按分数排序节点
-		Set<ScoreNode> scoreNodes = dectetor.buildScoreSet(ssaMayReferenceNull);
-		//  9 输出结果
-		dectetor.dumpResult(args[1], scoreNodes);
+            //  2 检查参数是否合法
+            dectetor.checkParameter(args);
+            //  3 创建函数调用关系图
+            dectetor.makeCallGraph();
+            logger.info("starting to find potential NPE");
+            //  4 找出所有返回null的函数集合
+            Collection<CGNode> returnNullNodes = dectetor.findAllReturnNullNode();
+            //  5 找出callee与caller之间的对应关系
+            Map<CGNode, Set<CGNode>> calleeMap2Callers = dectetor
+                    .findCallers(returnNullNodes);
+            //  6
+            Map<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>> ssaMayReferenceNull = dectetor
+                    .findSSAMayReferenceNull(calleeMap2Callers);
+            //  7 过滤
+            dectetor.filterByIfNENull(ssaMayReferenceNull);
+            //  8 按分数排序节点
+            Set<ScoreNode> scoreNodes = dectetor.buildScoreSet(ssaMayReferenceNull);
+            //  9 输出结果
+            dectetor.dumpResult(args[1], scoreNodes);
+        } catch (Exception e) {
+            logger.error(e);
+        }
+
 	}
 
 	private void dumpResult(String fileName, Set<ScoreNode> scoreNodes) {
@@ -218,7 +223,7 @@ public class NPEDectetor {
 				.getFile("Java60RegressionExclusions.txt");
 
 		String jarFiles = findJarFiles(new String[] { jarDir });
-        //
+        // 会非法参数异常
 		AnalysisScope scope = AnalysisScopeReader.makeJavaBinaryAnalysisScope(
 				jarFiles, exclusionsFile);
         // 存储类的层次结构信息
