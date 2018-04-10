@@ -23,17 +23,17 @@ public class WalaTest {
         // 获得一个文件
         File exFile=new FileProvider().getFile("Java60RegressionExclusions.txt");
         // 将分析域存到文件中
-        AnalysisScope scope = AnalysisScopeReader.makeJavaBinaryAnalysisScope("/Users/gonglei/jar/com.b-1.0-SNAPSHOT.jar", exFile);
-        System.out.println(scope.toString());
+        AnalysisScope scope = AnalysisScopeReader.makeJavaBinaryAnalysisScope("/Users/gonglei/jar/zookeeper-3.5.3-beta.jar", exFile);
+//        System.out.println(scope.toString());
         // 构建ClassHierarchy，相当与类的一个层级结构
         ClassHierarchy cha = ClassHierarchyFactory.make(scope);
         // 循环遍历每一个类
         for(IClass klass : cha) {
             // 打印类名
-            System.out.println("kkk");
-            System.out.println(klass.getName().toString());
+//            System.out.println(klass.getName().toString());
             // 判断当前类是否在jar中
-            System.out.println(klass.getClassLoader().toString());
+
+//            System.out.println(klass.getClassLoader().toString());
             if(scope.isApplicationLoader(klass.getClassLoader())) {
                 // 对在jar中的类的每个函数遍历，并打印函数名
                 System.out.println("run at here...................");
