@@ -1,8 +1,8 @@
-# NPEDectetor
-NPEDectetor is designed to find the potential null pointer exception in the systems writen by java(especially for distributed system). 
+# NPEDetector
+NPEDetector is designed to find the potential null pointer exception in the systems writen by java(especially for distributed system). 
 # Motivation
 <div  align="center">    
- <img src="https://github.com/lujiefsi/NPEDectetor/blob/master/hbase-13546.png" width="60%" height="60%" alt="hbase-13546" align=center />
+ <img src="https://github.com/lujiefsi/NPEDetector/blob/master/hbase-13546.png" width="60%" height="60%" alt="hbase-13546" align=center />
 </div>
 
 above figure shows the bug in hbase:
@@ -11,10 +11,10 @@ above figure shows the bug in hbase:
 2. Zookeeper expire the connection, so data related to master is null.
 3. Client send http request for get region server status before HMaster retoot
 4. After receive the request, RS will get master data from Zookeeper
-5.  Due to step 2, RS get null, and refrernce it w/o check it.
+5.  Due to step 2, RS get null, and reference it w/o check it.
 
-We can see that this bug is complex(involed 4 node and one crash event)
-but in  fact, develop have considered the master crash situation while parse:
+We can see that this bug is complex(involed 4 node and one crash event).
+Actually, the developers have considered the master crash situation while parse:
 <pre><code>
 //callee: parse
 public Master parse(byte[] data){
@@ -24,7 +24,7 @@ public Master parse(byte[] data){
 }
 </code></pre>
 
-but in its caller developer does not take null into count:
+but in its caller developer does not take the null pointer into account:
 <pre><code>
 //caller getMasterInfoPort
 public getMasterInfoPort(byte[] data){
@@ -34,11 +34,12 @@ public getMasterInfoPort(byte[] data){
 </code></pre>
 
 This bug shows that NPE happends in corner case but some (callee) developers are wake up this 
-case. So we develop NPEDectetor to catch this simpe bug pattern:<font color=red size=4>callee return null, but caller
+case. So we develop NPEDetector to catch this simpe bug pattern:<font color=red size=4>callee return null, but caller
 does not check it.</font>
 
 # Approach
-Based on [WALA](https://github.com/wala/WALA),an famous static analysis framework.
+NPEDetector is based on an famous static analysis framework [WALA](https://github.com/wala/WALA).
+We apply two analysis strategies in NPEDetector, difference in step 4:
 
     step1 : find all return null method(RNM)
 
@@ -46,11 +47,30 @@ Based on [WALA](https://github.com/wala/WALA),an famous static analysis framewor
 
     step3 : find all RNM return value's use instruction.
 
-    step4 : check all use instructions whether controled by check null condition(CNC)
+    step4 : simple: check if null checker exists in caller, without construct ControldependencyGraph
+	    complex:check all use instructions whether controled by check null condition(CNC)
 
     step5 : Score each callee:CNC numbers * 10 - caller number.
 
     step6 : Sort all callees and print.
+Simple strategy may cause false negatives like:
+ <pre><code>
+    ret = foo();
+    if (ret != null) ret.foo1;
+    ret.field;//NPE, but should not be reported
+</code></pre>
+  
+In step5, we score each callee based on:
++ if some developer have consider CNC, but some are not, we think no CNC developeres are wrong
++ developer may bother with those massive [CNC](https://stackoverflow.com/questions/271526/avoiding-null-statements/271874#271874)
     
-In step5, we score each callee based on:(1) if some developerer have consider CNC, but some are not,
-we think no CNC developeres are wrong(2)developer may borther massive [CNC](https://stackoverflow.com/questions/271526/avoiding-null-statements/271874#271874)
+# Usage
+1. We use maven build our project, so you can import it as existed maven project.
+2. vim the WALA  configuration file: ./NPEDetector/src/main/resources/wala.properties, you need to change:  
+   2.1 the property java_runtime_dir to your jre1.7 path.
+
+   2.2 set jardir as the jars path to be analyzed 
+
+   2.3 set outputfile as you want to dump result
+
+   2.4 set debug to false or true, this is for debug!

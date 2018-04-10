@@ -3,11 +3,21 @@ package com.lujie;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.TreeSet;
 import java.util.Map.Entry;
+import java.util.Properties;
+import java.util.Set;
 
 import com.ibm.wala.cfg.cdg.ControlDependenceGraph;
+import com.ibm.wala.cfg.exc.intra.SSACFGNullPointerAnalysis;
 import com.ibm.wala.classLoader.CallSiteReference;
+import com.ibm.wala.classLoader.IClass;
+import com.ibm.wala.classLoader.IMethod;
 import com.ibm.wala.ipa.callgraph.AnalysisCacheImpl;
 import com.ibm.wala.ipa.callgraph.AnalysisOptions;
 import com.ibm.wala.ipa.callgraph.AnalysisScope;
@@ -18,11 +28,14 @@ import com.ibm.wala.ipa.callgraph.CallGraphBuilderCancelException;
 import com.ibm.wala.ipa.callgraph.CallGraphStats;
 import com.ibm.wala.ipa.callgraph.Entrypoint;
 import com.ibm.wala.ipa.callgraph.impl.AllApplicationEntrypoints;
+import com.ibm.wala.ipa.callgraph.impl.DefaultEntrypoint;
+import com.ibm.wala.ipa.cfg.ExceptionPrunedCFG;
 import com.ibm.wala.ipa.cfg.PrunedCFG;
 import com.ibm.wala.ipa.cha.ClassHierarchy;
 import com.ibm.wala.ipa.cha.ClassHierarchyException;
 import com.ibm.wala.ipa.cha.ClassHierarchyFactory;
 import com.ibm.wala.properties.WalaProperties;
+import com.ibm.wala.shrikeBT.ArrayLengthInstruction;
 import com.ibm.wala.ssa.DefUse;
 import com.ibm.wala.ssa.IR;
 import com.ibm.wala.ssa.ISSABasicBlock;
@@ -39,11 +52,15 @@ import com.ibm.wala.util.collections.HashMapFactory;
 import com.ibm.wala.util.collections.HashSetFactory;
 import com.ibm.wala.util.collections.Pair;
 import com.ibm.wala.util.config.AnalysisScopeReader;
+import com.ibm.wala.util.intset.IntSet;
 import com.ibm.wala.util.io.FileProvider;
 import com.ibm.wala.util.io.FileUtil;
-import org.apache.log4j.Logger;
+import com.sun.xml.internal.bind.v2.TODO;
 
 /**
+ * 
+ * */
+public class NPEDetector {
  * NPE分析工具的入口类
  * @author lujie
  */
@@ -62,14 +79,18 @@ public class NPEDectetor {
      * 默认为false
      */
 	private boolean mainEntrypoints = false;
+	private boolean debug = false;
     /**
      * 设置100000000为大项目的阈值
      */
 	private static long CUTOFF_SIZE = 100000000;
+	private boolean simpleAnalysis = true;
+	private String outputFile = null;
     /**
      * 类的层次结构
      */
 	private ClassHierarchy cha = null;
+	private Map<CGNode, CGNode> trasnCalleeToRootCallee;
     /**
      * 存储节点分数的map
      */
@@ -79,14 +100,39 @@ public class NPEDectetor {
      */
 	private Map<CGNode, CGNode> transCalleeToRootCallee;
 
-	public NPEDectetor() {
-		this.checkedCalleeCount = new HashMap<CGNode, Integer>();
-		this.transCalleeToRootCallee = new HashMap<CGNode, CGNode>();
+	public NPEDetector() {
+		trasnCalleeToRootCallee = HashMapFactory.make();
 	}
 
 	public static void main(String[] args) throws IOException,
 			ClassHierarchyException, IllegalArgumentException,
 			CallGraphBuilderCancelException {
+		NPEDetector dectetor = new NPEDetector();
+		dectetor.checkParameter();
+		dectetor.makeCallGraph();
+		System.out.println("start to find potential NPE");
+		Collection<CGNode> returnNullNodes = dectetor.findAllReturnNullNode();
+		Map<CGNode, Set<CGNode>> calleeMap2Callers = dectetor
+				.findCallers(returnNullNodes);
+		ControldependencyAnalysis controldependencyAnalysis = dectetor
+				.getControlDependencyAnalysis();
+
+		Map<CGNode, Set<CGNode>> noNEChekerCalleeMap2Callers = controldependencyAnalysis
+				.analysis(calleeMap2Callers);
+		Set<ScoreNode> scoreNodes = dectetor.buildScoreSet(
+				noNEChekerCalleeMap2Callers,
+				controldependencyAnalysis.getCheckedCalleeCount());
+		dectetor.dumpResult(scoreNodes);
+	}
+
+	private ControldependencyAnalysis getControlDependencyAnalysis() {
+		if (simpleAnalysis) {
+			return new SimpleControldependencyAnalysis(callGraph,
+					trasnCalleeToRootCallee);
+		} else {
+			return new ComplexControldependencyAnalysis(callGraph,
+					trasnCalleeToRootCallee);
+		}
 		logger.info("test log...");
 	    NPEDectetor dectetor = new NPEDectetor();
 	    try {
@@ -117,8 +163,8 @@ public class NPEDectetor {
 
 	}
 
-	private void dumpResult(String fileName, Set<ScoreNode> scoreNodes) {
-		File file = new File(fileName);
+	private void dumpResult(Set<ScoreNode> scoreNodes) {
+		File file = new File(outputFile);
 		FileWriter writer = null;
 		try {
 			writer = new FileWriter(file);
@@ -153,23 +199,9 @@ public class NPEDectetor {
      * @return
      */
 	private Set<ScoreNode> buildScoreSet(
-			Map<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>> map) {
-		Iterator<Entry<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>>> entryIterator = map
-				.entrySet().iterator();
+			Map<CGNode, Set<CGNode>> calleeMap2Callers,
+			Map<CGNode, Integer> checkedCalleeCount) {
 		Set<ScoreNode> ret = new TreeSet<ScoreNode>();
-		Map<CGNode, Set<CGNode>> calleeMap2Callers = HashMapFactory.make();
-		while (entryIterator.hasNext()) {
-			Entry<Pair<CGNode, CGNode>, Set<Pair<CGNode, SSAInstruction>>> entry = entryIterator
-					.next();
-			CGNode caller = entry.getKey().fst;
-			CGNode callee = transCalleeToRootCallee.get(entry.getKey().snd);
-			Set<CGNode> callers = calleeMap2Callers.get(callee);
-			if (callers == null) {
-				callers = HashSetFactory.make();
-				calleeMap2Callers.put(callee, callers);
-			}
-			callers.add(caller);
-		}
 		for (Entry<CGNode, Set<CGNode>> entry : calleeMap2Callers.entrySet()) {
 			ScoreNode scoreNode = new ScoreNode();
 			scoreNode.node = entry.getKey();
@@ -184,21 +216,40 @@ public class NPEDectetor {
 		return ret;
 	}
 
-    /**
-     *
-     * @param args
-     */
-	private void checkParameter(String[] args) {
-		if (args.length != 2) {
-			// logger error
-		    System.out.println("wrong parameter number");
-			System.exit(1);
-		}
-		jarDir = args[0];
-		// jarDir should be a directory
-		if (!(new File(jarDir).isDirectory())) {
+	private void checkParameter() {
+		try {
 
-			System.out.println("wrong tart jar directory");
+			// check jre
+			Properties p = WalaProperties.loadProperties();
+			String javaHome = p.getProperty(WalaProperties.J2SE_DIR);
+			if (!javaHome.contains("1.7")) {
+				Util.exitWithErrorMessage("check your javahome wrong jdk version , must be 1.7");
+			}
+			// check jardir
+			jarDir = p.getProperty("jardir");
+			if (jarDir == null) {
+				Util.exitWithErrorMessage("please configure your jardir");
+			}
+			// user may mistake leave a blank space end of the path
+			jarDir.replaceAll(" ", "");
+
+			outputFile = p.getProperty("outputfile");
+			if (outputFile == null) {
+				Util.exitWithErrorMessage("please configure your outputfile");
+			}
+			outputFile.replaceAll(" ", "");
+			// check debug
+			String debugString = p.getProperty("debug");
+			if (debugString != null && debugString.equals("true")) {
+				debug = true;
+			}
+			// check cda
+			String cda = p.getProperty("cda");
+			if (cda != null && cda.equals("complex")) {
+				simpleAnalysis = false;
+			}
+		} catch (WalaException e) {
+			e.printStackTrace();
 			System.exit(1);
 		}
 	}
@@ -212,9 +263,7 @@ public class NPEDectetor {
      */
 	private void makeCallGraph() throws IOException, ClassHierarchyException,
 			IllegalArgumentException, CallGraphBuilderCancelException {
-
-	    long start_time = System.currentTimeMillis();
-		// logger
+		long start_time = System.currentTimeMillis();
 		System.out.println("start to make call graph");
 
 		FileProvider fileProvider = new FileProvider();
@@ -230,6 +279,10 @@ public class NPEDectetor {
 		cha = ClassHierarchyFactory.make(scope);
 
 		Iterable<Entrypoint> entryPointIterator = null;
+		if (debug) {
+			entryPointIterator = addSpecialEntryPoint();
+		} else if (mainEntrypoints) {
+			entryPointIterator = com.ibm.wala.ipa.callgraph.impl.Util
 
 		if (mainEntrypoints) {
 		    // 指定main方法分析
@@ -270,11 +323,28 @@ public class NPEDectetor {
 		    //logger  MainApplciationEntryPoint
 			// 设置入口方法点
 			mainEntrypoints = true;
+		} else {
+			message.append("AllApplciationEntryPoint");
 		}else{
             // 不设置入口方法点
             // logger AllApplciationEntryPoint
 		}
+		if (!debug) {
+			System.out.println(message);
+		}
+		return composeString(result);
 		return result.substring(0, result.length()-1).toString();
+	}
+
+	private String composeString(Collection<String> s) {
+		StringBuffer result = new StringBuffer();
+		Iterator<String> it = s.iterator();
+		for (int i = 0; i < s.size() - 1; i++) {
+			result.append(it.next());
+			result.append(File.pathSeparator);
+		}
+		result.append(it.next());
+		return result.toString();
 	}
 
 	// 检查JRE版本
@@ -301,7 +371,7 @@ public class NPEDectetor {
 	private Collection<CGNode> findAllReturnNullNode() {
 		Set<CGNode> returnNullNodes = HashSetFactory.make();
 		for (CGNode node : callGraph) {
-			/*debug point for check special method*/
+			/* debug point for check special method */
 			if (node.toString().contains("BinaryInputArchive")
 					&& node.toString().contains("readBuffer")) {
 				System.out.print("");
@@ -423,9 +493,9 @@ public class NPEDectetor {
 			Collection<CGNode> returnNullNodes) {
 		Map<CGNode, Set<CGNode>> calleeMapCallers = HashMapFactory.make();
 		for (CGNode returnNullNode : returnNullNodes) {
-			/*debug point for check special method*/
-			if (returnNullNode.toString().contains("BinaryInputArchive")
-					&& returnNullNode.toString().contains("readBuffer")) {
+			/* debug point for check special method */
+			if (returnNullNode.toString().contains("SecurityUtils")
+					&& returnNullNode.toString().contains("createSaslClient")) {
 				System.out.print("");
 			}
 			Collection<Pair<CGNode, CGNode>> callerAndCallees = this
@@ -441,6 +511,16 @@ public class NPEDectetor {
 		return calleeMapCallers;
 	}
 
+	private Iterable<Entrypoint> addSpecialEntryPoint() {
+		final Set<Entrypoint> entrypoints = new HashSet<Entrypoint>();
+		for (IClass cls : cha) {
+			if (cls.getName().toString().endsWith("FsDatasetImpl")) {
+				for (IMethod method : cls.getAllMethods()) {
+					entrypoints.add(new DefaultEntrypoint(method, cha));
+				}
+			}
+		}
+		return new Iterable<Entrypoint>() {
     /**
      *
      * @param calleeMapCallers
@@ -570,6 +650,8 @@ public class NPEDectetor {
 		}
 	}
 
+			public Iterator<Entrypoint> iterator() {
+				return entrypoints.iterator();
 	// need to handle if (x==null) exit;
 
     /**
@@ -605,8 +687,7 @@ public class NPEDectetor {
 					}
 				}
 			}
-		}
-		return false;
+		};
 	}
 
     /**

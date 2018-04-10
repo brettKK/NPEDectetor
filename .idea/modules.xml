@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NPEDetector.iml" filepath="$PROJECT_DIR$/NPEDetector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NPEDectetor.iml" filepath="$PROJECT_DIR$/NPEDectetor.iml" />
     </modules>
   </component>
 </project>
