@@ -61,11 +61,6 @@ import com.sun.xml.internal.bind.v2.TODO;
  * 
  * */
 public class NPEDetector {
- * NPE分析工具的入口类
- * @author lujie
- */
-public class NPEDectetor {
-    private static final Logger logger = Logger.getLogger(NPEDectetor.class);
     /**
      * 分析的项目所在的目录路径
      */

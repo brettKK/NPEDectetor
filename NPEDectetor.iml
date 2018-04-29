@@ -11,10 +11,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.ibm.wala:com.ibm.wala.core:1.4.3" level="project" />
     <orderEntry type="library" name="Maven: com.ibm.wala:com.ibm.wala.shrike:1.4.3" level="project" />
     <orderEntry type="library" name="Maven: com.ibm.wala:com.ibm.wala.util:1.4.3" level="project" />
-    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
   </component>
 </module>
